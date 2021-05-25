@@ -1,0 +1,123 @@
+<?php
+namespace DummyNamespace;
+use DummyInterfaceNamespace;
+use DummyModelNamespace;
+
+use Illuminate\Support\Collection;
+
+
+class DummyClass implements DummyClassInterface
+{
+
+    /**
+     * Creates a new record
+     *
+     * @param Collection $data
+     * @return DummyModelClass
+     */
+    public function store(Collection $data)
+    {
+
+        $processedData = collect($this->formFields($data));
+
+        $model = new DummyModelClass($processedData->toArray());
+
+        $model->save();
+
+        return $model->refresh();
+    }
+
+    /**
+     * Find for filter
+     *
+     * @param Collection $filters
+     * @param array $with
+     * @return DummyModelClass
+     */
+    public function find(Collection $filters, $with = [])
+    {
+        $model = DummyModelClass::with($with);
+        $model = $this->applyFilters($filters, $model);
+        return $model->first();
+    }
+
+    /**
+     * Fetch All for filter
+     *
+     * @param Collection $filters
+     * @param array $with
+     * @return EloquentCollection
+     */
+    public function fetch(Collection $filters, $with = [])
+    {
+        $model = DummyModelClass::with($with);
+        $model = $this->applyFilters($filters, $model);
+        return $model->get();
+    }
+
+    /**
+     *
+     * Delete for filter
+     *
+     * @param Collection $filters
+     * @param array $with
+     * @return bool
+     */
+    public function delete(Collection $filters, array $with = [])
+    {
+        $model = DummyModelClass::with($with);
+        $model = $this->applyFilters($filters, $model);
+        return $model->delete();
+    }
+
+    /**
+     * Updates the data
+     *
+     * @param int $id
+     * @param Collection $data
+     * @return bool
+     */
+    public function update(int $id, Collection $data) {
+        $updates = collect($this->formFields($data));
+        return DummyModelClass::find($id)->update($updates->toArray());
+    }
+
+    /**
+     *
+     * Get Field
+     *
+     * @param Collection $data
+     * @return Collection
+     */
+    public function formFields(Collection $data)
+    {
+        $fields = collect([]);
+
+        // if ($data->get('fieldName') !== null)
+        // {
+        //     $fields->put('column_name', $data->get('fieldName'));
+        // }
+
+        return $fields;
+    }
+
+
+    /**
+     *
+     * Applies the filters to the model
+     * @param Collection $filters
+     * @param $model
+     * @return $model;
+     */
+    private function applyFilters(Collection $filters, $model)
+    {
+
+        // if ($filters->has('filterName'))
+        // {
+        //     $model->where('column_name', $filters->get('filterName'));
+        //
+        // }
+
+        return $model;
+    }
+}

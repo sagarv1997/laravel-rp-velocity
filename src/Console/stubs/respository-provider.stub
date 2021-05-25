@@ -1,0 +1,37 @@
+<?php
+
+namespace DummyNamespace;
+
+use Illuminate\Support\ServiceProvider;
+
+class DummyName extends ServiceProvider
+{
+    /**
+     * Register services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+        $this->mapRepositoryProviders();
+    }
+
+    /**
+     * Database repository providers
+     */
+    public function mapRepositoryProviders()
+    {
+        // Bind all the Repository Implementation and Interface here
+        // $this->app->bind(RepositoryInterface::class, Repository::class);
+    }
+
+    /**
+     * Bootstrap services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        //
+    }
+}

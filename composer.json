@@ -1,0 +1,24 @@
+{
+    "name": "sagarv1997/rp-velocity",
+    "description": "This Package Commands helps in creating the Repository Pattern in Laravel",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "sagarv1997",
+            "email": "sagarv1997@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Sagarv1997\\RpVelocity\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Sagarv1997\\RpVelocity\\Providers\\RepositoryPatternServiceProvider"
+            ]
+        }
+    }
+}

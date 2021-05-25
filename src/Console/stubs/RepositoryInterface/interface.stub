@@ -1,0 +1,60 @@
+<?php
+
+namespace DummyNamespace;
+
+use Exception;
+use Illuminate\Database\Eloquent\Collection as EloquentCollection;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Collection;
+
+interface DummyClass
+{
+
+    /**
+     * Creates a new record
+     *
+     * @param Collection $data
+     * @throws Exception
+     * @return Model
+     */
+    public function store(Collection $data);
+
+    /**
+     * Find for filter
+     *
+     * @param Collection $filters
+     * @param array $with
+     * @return Model
+     */
+    public function find(Collection $filters, $with = []);
+
+    /**
+     * Fetch All for filter
+     *
+     * @param Collection $filters
+     * @param array $with
+     * @return EloquentCollection
+     */
+    public function fetch(Collection $filters, $with = []);
+
+
+    /**
+     * Updates the data
+     *
+     * @param int $id
+     * @param Collection $data
+     * @return bool
+     */
+    public function update(int $id, Collection $data);
+
+    /**
+     *
+     * Delete for filter
+     *
+     * @param Collection $filters
+     * @param array $with
+     * @return bool
+     */
+    public function delete(Collection $filters, array $with = []);
+
+}
