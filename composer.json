@@ -1,6 +1,11 @@
 {
     "name": "sagarv1997/rp-velocity",
     "description": "Laravel Console Command to easily create Repository Pattern in Laravel Project",
+    "keywords": [
+        "laravel",
+        "repository pattern",
+        "repository"
+    ],
     "license": "MIT",
     "authors": [
         {

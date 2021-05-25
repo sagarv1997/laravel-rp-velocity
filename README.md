@@ -1,6 +1,6 @@
 # RpVelocity
 
-RpVelocity Package has Laravel Console commands which help in creating a standard repository pattern in Laravel Project.
+RpVelocity Package has Laravel Console command which help in creating a standard repository pattern in Laravel Project.
 
 ## Installation
 
@@ -12,7 +12,7 @@ composer require sagarv1997/rp-velocity
 
 ## Features
 
-It will generate all the classes for Repository Pattern Implementation
+It helps in generating all the following classes for Repository Pattern Implementation
 
 - Model
 - Interface
@@ -29,6 +29,8 @@ php artisan make:repository-provider RepositoryServiceProvider
 
 The last step is to register this service provider in the config/app.php. Open config/app.php file and add the newly created provider in the providers
 
+#### Example
+
 ```php
 'providers' => [
     ...
@@ -42,9 +44,9 @@ The last step is to register this service provider in the config/app.php. Open c
 php artisan repository:generate ModelName
 ```
 
-Once the files are generated you need to bind those files in the RepositoryServiceProvider class which generated in the Configuration step.
+Once the files are generated you need to bind those files in the RepositoryServiceProvider class which was generated in the Configuration step.
 
-Add the bindings in the mapRepositoryProvders function.
+Add the bindings in the mapRepositoryProviders function.
 
 #### Example
 
