@@ -1,6 +1,6 @@
 {
     "name": "sagarv1997/rp-velocity",
-    "description": "This Package Commands helps in creating the Repository Pattern in Laravel",
+    "description": "Laravel Console Command to easily create Repository Pattern in Laravel Project",
     "license": "MIT",
     "authors": [
         {
